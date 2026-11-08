@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ============================================================
+       FALLBACK OPEN GRAPH (dla innych platform i gdy Component Embed zawiedzie)
+       ============================================================ -->
+  <title>VerCode Bot Manager — Zarządzaj botami lokalnie</title>
+  <meta name="description" content="Zarządzaj botami w JS i Python bez stresu o pliki. Hosting lokalny, pełna kontrola." />
+
+  <!-- Open Graph (Discord, Slack, Twitter, iMessage itd.) -->
+  <meta property="og:title" content="VerCode Bot Manager — Twoje boty lokalnie" />
+  <meta property="og:description" content="Zarządzaj botami w JS i Python w jednej aplikacji. Twoje pliki zostają u Ciebie." />
+  <meta property="og:image" content="https://twojadomena.pl/og-image.png" />
+  <meta property="og:url" content="https://twojadomena.pl/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card (opcjonalnie, ale dobra praktyka) -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ============================================================
+       COMPONENT EMBED (Components V2) — właściwy embed dla Discorda
+       ============================================================ -->
+  <script id="discord:component-embed" type="application/json">
+  {
+    "component": {
+      "type": 17,
+      "accent_color": 5793266,
+      "components": [
+        {
+          "type": 9,
+          "components": [
+            {
+              "type": 10,
+              "content": "# **VerCode Bot Manager**\nZarządzaj swoimi botami bez obaw o pliki i ich przypadkowe usunięcie."
+            }
+          ],
+          "accessory": {
+            "type": 2,
+            "style": 5,
+            "url": "https://twojadomena.pl/",
+            "label": "Otwórz stronę"
+          }
+        },
+        {
+          "type": 10,
+          "content": "Każdy bot hostujesz **lokalnie** — niezależnie od tego, czy tworzysz w **JavaScript**, czy w **Python**. Wszystkie boty w jednym miejscu, pełna kontrola nad plikami."
+        },
+        {
+          "type": 14,
+          "spacing": 1
+        },
+        {
+          "type": 10,
+          "content": "✅ Hosting lokalny\n✅ Obsługa JS i Python\n✅ Większa kontrola nad plikami\n✅ Mniej stresu o przypadkowe usunięcie"
+        },
+        {
+          "type": 1,
+          "components": [
+            {
+              "type": 2,
+              "style": 5,
+              "url": "https://twojadomena.pl/pobierz",
+              "label": "Pobierz"
+            },
+            {
+              "type": 2,
+              "style": 5,
+              "url": "https://twojadomena.pl/funkcje",
+              "label": "Funkcje"
+            }
+          ]
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <h1>VerCode Bot Manager</h1>
+  <p>Ta strona służy jako źródło podglądu linku (Component Embed) dla Discorda.</p>
+</body>
+</html>
