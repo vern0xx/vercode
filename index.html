@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#05060a" />
-  <title>VerCode Bot Manager - Zarządzaj botami lokalnie</title>
-  <meta name="description" content="Zarządzaj botami w JS i Python bez stresu o pliki. Hosting lokalny, pełna kontrola." />
-  <meta property="og:title" content="VerCode Bot Manager - Twoje boty lokalnie" />
-  <meta property="og:description" content="Zarządzaj botami w JS i Python w jednej aplikacji. Twoje pliki zostają u Ciebie." />
+  <title>VerCode - Twoje boty, Twój komputer, Twój spokój</title>
+  <meta name="description" content="VerCode ogarnia wszystkie Twoje boty w jednym miejscu. JS czy Python - pliki zostają na Twoim dysku." />
+  <meta property="og:title" content="VerCode - Twoje boty mieszkają u Ciebie" />
+  <meta property="og:description" content="Wszystkie boty w jednym panelu. Bez chmury, bez wysyłania, bez niespodzianek." />
   <meta property="og:image" content="https://przechowaj.vercode.pl/file/view/1b359cc1340545b48aab28ff9a4b9623/Gemini_Generated_Image_s1n2hqs1n2hqs1n2.jpg" />
-  <meta property="og:url" content="https://twojadomena.pl/" />
+  <meta property="og:url" content="https://vern0xx.github.io/vercode/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -24,7 +24,7 @@
           "components": [
             {
               "type": 10,
-              "content": "# **VerCode Bot Manager**\nZarządzaj swoimi botami bez obaw o pliki i ich przypadkowe usunięcie."
+              "content": "# **VerCode**\nTwoje boty mieszkają u Ciebie - i mają się dobrze."
             }
           ],
           "accessory": {
@@ -36,12 +36,12 @@
         },
         {
           "type": 10,
-          "content": "Każdy bot hostujesz **lokalnie** - niezależnie od tego, czy tworzysz w **JavaScript**, czy w **Python**. Wszystkie boty w jednym miejscu, pełna kontrola nad plikami."
+          "content": "Wszystkie boty w jednym panelu. Piszesz w **JavaScript**? W **Pythonie**? Bez różnicy. Pliki zostają tam, gdzie ich miejsce: na Twoim komputerze."
         },
         { "type": 14, "spacing": 1 },
         {
           "type": 10,
-          "content": "- Hosting lokalny\n- Obsługa JS i Python\n- Większa kontrola nad plikami\n- Mniej stresu o przypadkowe usunięcie"
+          "content": "- Wszystko działa lokalnie\n- JS i Python w jednym miejscu\n- Twój kod nigdzie nie wyjeżdża\n- Zero stresu o pliki"
         },
         {
           "type": 12,
@@ -50,10 +50,10 @@
               "media": {
                 "url": "https://przechowaj.vercode.pl/file/view/1b359cc1340545b48aab28ff9a4b9623/Gemini_Generated_Image_s1n2hqs1n2hqs1n2.jpg"
               },
-              "description": "Podgląd VerCode Bot Manager"
+              "description": "Podgląd VerCode"
             }
           ]
-        },
+        }
       ]
     }
   }
@@ -85,7 +85,7 @@
       font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
       min-height: 100vh;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
@@ -105,14 +105,14 @@
 
     [data-reveal] {
       opacity: 0;
-      transform: translateY(28px);
+      transform: translateY(26px);
       transition: opacity 0.75s var(--ease-bounce), transform 0.75s var(--ease-bounce);
     }
     [data-reveal].revealed { opacity: 1; transform: translateY(0); }
 
-    .brand-mark {
-      width: 34px;
-      height: 34px;
+    .brand-logo-wrap {
+      width: 36px;
+      height: 36px;
       border-radius: 10px;
       background: var(--accent);
       display: grid;
@@ -123,17 +123,28 @@
         inset 0 -1px 0 rgba(0,0,0,0.25);
       transition: transform 0.35s var(--ease-bounce), box-shadow 0.35s var(--ease);
       flex-shrink: 0;
+      overflow: hidden;
+      position: relative;
     }
 
-    .brand-mark svg {
+    .brand-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 4px;
+      display: block;
+    }
+
+    .brand-fallback {
       width: 20px;
       height: 20px;
       fill: #fff;
-      transition: transform 0.5s var(--ease-bounce);
     }
 
-    .brand:hover .brand-mark { transform: rotate(-6deg) scale(1.06); box-shadow: 0 0 32px rgba(88,101,242,0.8), inset 0 1px 0 rgba(255,255,255,0.3); }
-    .brand:hover .brand-mark svg { transform: rotate(6deg) scale(1.05); }
+    .brand:hover .brand-logo-wrap {
+      transform: rotate(-6deg) scale(1.06);
+      box-shadow: 0 0 32px rgba(88,101,242,0.8), inset 0 1px 0 rgba(255,255,255,0.3);
+    }
 
     nav.top {
       position: fixed;
@@ -146,7 +157,7 @@
       justify-content: space-between;
       width: calc(100% - 48px);
       max-width: 1120px;
-      padding: 10px 14px 10px 22px;
+      padding: 10px 14px 10px 18px;
       border-radius: 999px;
       background: rgba(10, 12, 20, 0.6);
       backdrop-filter: blur(28px) saturate(190%);
@@ -240,6 +251,37 @@
     }
     .btn-primary:active { transform: translateY(0) scale(0.98); }
 
+    .btn-soon {
+      background: rgba(88,101,242,0.55);
+      color: rgba(255,255,255,0.92);
+      border-color: rgba(88,101,242,0.38);
+      cursor: not-allowed;
+      pointer-events: none;
+      box-shadow: 0 8px 26px rgba(88,101,242,0.2), inset 0 1px 0 rgba(255,255,255,0.18);
+      animation: soonPulse 3.2s ease-in-out infinite;
+    }
+
+    @keyframes soonPulse {
+      0%, 100% {
+        box-shadow: 0 8px 26px rgba(88,101,242,0.2), inset 0 1px 0 rgba(255,255,255,0.18);
+        border-color: rgba(88,101,242,0.38);
+      }
+      50% {
+        box-shadow: 0 10px 34px rgba(88,101,242,0.5), inset 0 1px 0 rgba(255,255,255,0.28);
+        border-color: rgba(88,101,242,0.65);
+      }
+    }
+
+    .btn-soon .icon-clock .clock-hand {
+      transform-origin: 12px 12px;
+      transform-box: view-box;
+      animation: clockTick 4s steps(12) infinite;
+    }
+
+    @keyframes clockTick {
+      to { transform: rotate(360deg); }
+    }
+
     .btn-glass {
       background: rgba(255,255,255,0.055);
       backdrop-filter: blur(22px) saturate(180%);
@@ -255,25 +297,58 @@
     }
     .btn-glass:active { transform: translateY(0) scale(0.98); }
 
-    .btn:hover .icon-dl .dl-arrow,
-    .btn:hover .icon-dl .dl-head { transform: translateY(3px); }
-    .btn:hover .icon-rocket { transform: translateY(-3px) rotate(-12deg); }
-    .btn:hover .icon-rocket .r-fire { opacity: 0.6; }
-    .btn:hover .icon-eye .eye-pupil { transform: scale(1.35); }
-    .btn:hover .icon-spark .spark { transform: rotate(180deg) scale(1.25); }
-    .btn:hover .icon-spark .dl-arrow,
-    .btn:hover .icon-spark .dl-head { transform: translateY(3px); }
-    .btn:hover .icon-compass .compass-needle { transform: rotate(60deg); }
-    .btn:hover .icon-compass { transform: rotate(15deg); }
+    .btn:hover .icon-eye .eye-pupil {
+      transform: scale(1.4);
+    }
+    .btn:hover .icon-compass {
+      transform: rotate(20deg);
+    }
+    .btn:hover .icon-compass .compass-needle {
+      transform: rotate(55deg);
+    }
+    .btn:hover .icon-sparkle .spark-main {
+      transform: rotate(45deg) scale(1.15);
+    }
+    .btn:hover .icon-sparkle .spark-min {
+      transform: rotate(-30deg) scale(1.2);
+    }
+    .btn:hover .icon-arrow .arrow-head {
+      transform: translateX(3px);
+    }
 
-    .icon-dl .dl-arrow, .icon-dl .dl-head,
-    .icon-spark .dl-arrow, .icon-spark .dl-head {
+    .icon-eye .eye-pupil {
+      transform-origin: 12px 12px;
+      transform-box: view-box;
       transition: transform 0.4s var(--ease-bounce);
     }
-    .icon-rocket .r-fire { transition: opacity 0.3s var(--ease); }
-    .icon-eye .eye-pupil { transition: transform 0.4s var(--ease-bounce); transform-origin: 12px 12px; transform-box: view-box; }
-    .icon-spark .spark { transform-origin: 12px 12px; transform-box: view-box; transition: transform 0.5s var(--ease-bounce); }
-    .icon-compass .compass-needle { transform-origin: 12px 12px; transform-box: view-box; transition: transform 0.7s var(--ease-bounce); }
+
+    .icon-compass {
+      transform-origin: 12px 12px;
+      transform-box: view-box;
+      transition: transform 0.6s var(--ease-bounce);
+    }
+
+    .icon-compass .compass-needle {
+      transform-origin: 12px 12px;
+      transform-box: view-box;
+      transition: transform 0.7s var(--ease-bounce);
+    }
+
+    .icon-sparkle .spark-main {
+      transform-origin: 12px 12px;
+      transform-box: view-box;
+      transition: transform 0.55s var(--ease-bounce);
+    }
+
+    .icon-sparkle .spark-min {
+      transform-origin: 12px 12px;
+      transform-box: view-box;
+      transition: transform 0.55s var(--ease-bounce);
+    }
+
+    .icon-arrow .arrow-head {
+      transition: transform 0.4s var(--ease-bounce);
+    }
 
     .hero {
       padding-top: 170px;
@@ -337,13 +412,13 @@
       animation: fadeUp 0.85s var(--ease-bounce) 0.18s both;
     }
 
-    .hero-brand-large .brand-mark {
+    .hero-brand-large .brand-logo-wrap {
       width: 56px;
       height: 56px;
       border-radius: 16px;
     }
 
-    .hero-brand-large .brand-mark svg { width: 30px; height: 30px; }
+    .hero-brand-large .brand-fallback { width: 30px; height: 30px; }
 
     .hero h1 {
       font-size: clamp(2.5rem, 5vw, 3.7rem);
@@ -542,7 +617,7 @@
 
     .morph-container:hover .zoom-hint { transform: scale(1.12) rotate(-6deg); background: rgba(88,101,242,0.75); }
 
-    .zoom-hint svg { width: 16px; height: 16px; fill: #fff; }
+    .zoom-hint svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
     .morph-progress {
       position: absolute;
@@ -610,7 +685,7 @@
     .nav-arrow:active { transform: translateY(-50%) scale(0.96); }
     .nav-arrow.prev { left: 14px; }
     .nav-arrow.next { right: 14px; }
-    .nav-arrow svg { width: 18px; height: 18px; fill: #fff; }
+    .nav-arrow svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
     section.features { padding: 110px 0 80px; position: relative; }
 
@@ -634,7 +709,7 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
     }
 
-    .eyebrow svg { width: 14px; height: 14px; fill: currentColor; }
+    .eyebrow svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
     .section-head h2 {
       font-size: clamp(1.9rem, 4vw, 2.9rem);
@@ -724,7 +799,7 @@
       height: 24px;
       fill: none;
       stroke: #c4caff;
-      stroke-width: 1.7;
+      stroke-width: 1.8;
       stroke-linecap: round;
       stroke-linejoin: round;
       transition: stroke 0.35s var(--ease);
@@ -844,8 +919,8 @@
       color: var(--text);
     }
 
-    .footer-brand .brand-mark { width: 26px; height: 26px; border-radius: 8px; }
-    .footer-brand .brand-mark svg { width: 15px; height: 15px; }
+    .footer-brand .brand-logo-wrap { width: 26px; height: 26px; border-radius: 8px; }
+    .footer-brand .brand-fallback { width: 15px; height: 15px; }
 
     .footer-links { display: flex; gap: 24px; }
 
@@ -861,7 +936,11 @@
     .footer-links a svg {
       width: 12px;
       height: 12px;
-      fill: currentColor;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
       opacity: 0.6;
       transition: transform 0.3s var(--ease-bounce), opacity 0.25s var(--ease);
     }
@@ -946,7 +1025,7 @@
 
     .lightbox-close:hover { background: var(--accent); transform: scale(1.1) rotate(90deg); }
     .lightbox-close:active { transform: scale(0.95) rotate(90deg); }
-    .lightbox-close svg { width: 20px; height: 20px; fill: #fff; }
+    .lightbox-close svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 
     .lightbox-nav {
       position: absolute;
@@ -970,7 +1049,7 @@
     .lightbox-nav:active { transform: translateY(-50%) scale(0.96); }
     .lightbox-nav.prev { left: 20px; }
     .lightbox-nav.next { right: 20px; }
-    .lightbox-nav svg { width: 22px; height: 22px; fill: #fff; }
+    .lightbox-nav svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
     .lightbox-caption {
       position: absolute;
@@ -1017,58 +1096,57 @@
 <body>
 
 <nav class="top">
-  <a href="/logo.png" class="brand">
+  <a href="#" class="brand">
+    <span class="brand-logo-wrap">
+      <img src="logo.png" alt="VerCode" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+      <svg class="brand-fallback" viewBox="0 0 24 24" style="display:none"><path d="M4 3h4.5L12 12.5 15.5 3H20l-6.2 18h-3.6L4 3z"/></svg>
+    </span>
     <span>VerCode</span>
   </a>
   <div class="nav-pill-container" id="navPillContainer">
     <div class="nav-pill" id="navPill"></div>
     <a href="#funkcje" class="nav-link">Funkcje</a>
     <a href="#podglad" class="nav-link">Podgląd</a>
-    <a href="#pobierz" class="nav-link">Pobierz</a>
+    <a href="#premiera" class="nav-link">Premiera</a>
   </div>
-  <a href="#pobierz" class="btn btn-primary">
-    <span>Pobierz</span>
-    <svg class="btn-icon icon-dl" viewBox="0 0 24 24">
-      <path class="dl-arrow" d="M12 4v10"/>
-      <path class="dl-head" d="M7 9l5 5 5-5"/>
-      <path class="dl-tray" d="M5 19h14"/>
+  <span class="btn btn-soon">
+    <span>Wkrótce</span>
+    <svg class="btn-icon icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9"/>
+      <polyline class="clock-hand" points="12 7 12 12 15.5 14"/>
     </svg>
-  </a>
+  </span>
 </nav>
 
 <section class="hero container" id="podglad">
   <div class="hero-content">
     <span class="hero-badge">
       <span class="dot"></span>
-      Hosting lokalny · Twoje pliki pod kontrolą
+      Hosting lokalny · Pliki zostają u Ciebie
     </span>
     <div class="hero-brand-large">
-      <span class="brand-mark">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 3h4.5L12 12.5 15.5 3H20l-6.2 18h-3.6L4 3z"/>
-        </svg>
+      <span class="brand-logo-wrap">
+        <img src="logo.png" alt="VerCode" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+        <svg class="brand-fallback" viewBox="0 0 24 24" style="display:none"><path d="M4 3h4.5L12 12.5 15.5 3H20l-6.2 18h-3.6L4 3z"/></svg>
       </span>
       <span>VerCode Bot Manager</span>
     </div>
-    <h1>Zarządzaj botami<br><span class="accent">lokalnie i bezpiecznie.</span></h1>
+    <h1>Wszystkie boty<br><span class="accent">u Ciebie, na Twoim dysku.</span></h1>
     <p class="lead">
-      VerCode Bot Manager to centrum dowodzenia dla Twoich projektów.
-      Obsługa JavaScript i Python w jednym miejscu. Twoje pliki zostają na Twoim dysku.
+      VerCode ogarnia wszystkie Twoje boty w jednym miejscu - niezależnie czy piszesz w JS, czy w Pythonie. Pliki zostają tam, gdzie ich miejsce: na Twoim komputerze.
     </p>
     <div class="hero-actions">
-      <a href="#pobierz" class="btn btn-primary">
-        <span>Pobierz za darmo</span>
-        <svg class="btn-icon icon-rocket" viewBox="0 0 24 24">
-          <path d="M12 3c2 0 3.7 1.4 4.7 3.5 1 2.1 1 4.7-.3 7.4L12 18l-4.4-4.1C6.3 11.2 6.3 8.6 7.3 6.5 8.3 4.4 10 3 12 3z"/>
-          <circle class="r-window" cx="12" cy="9.5" r="1.6"/>
-          <path class="r-fire" d="M9 18l-2 3 5-1.5"/>
-          <path class="r-fire" d="M15 18l2 3-5-1.5"/>
+      <span class="btn btn-soon">
+        <span>Wkrótce dostępne</span>
+        <svg class="btn-icon icon-clock" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"/>
+          <polyline class="clock-hand" points="12 7 12 12 15.5 14"/>
         </svg>
-      </a>
+      </span>
       <a href="#funkcje" class="btn btn-glass">
-        <span>Dowiedz się więcej</span>
+        <span>Zobacz co potrafi</span>
         <svg class="btn-icon icon-eye" viewBox="0 0 24 24">
-          <path d="M2 12c2-3.5 6-7 10-7s8 3.5 10 7c-2 3.5-6 7-10 7S4 15.5 2 12z"/>
+          <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
           <circle class="eye-pupil" cx="12" cy="12" r="3"/>
         </svg>
       </a>
@@ -1080,7 +1158,7 @@
       </div>
       <div class="stat">
         <span class="num">JS + PY</span>
-        <span class="lbl">Dwa środowiska</span>
+        <span class="lbl">Dwa języki</span>
       </div>
       <div class="stat">
         <span class="num">∞</span>
@@ -1097,13 +1175,13 @@
           <div class="morph-overlay"></div>
           <span class="morph-label" id="morphLabel">Panel główny</span>
           <span class="zoom-hint">
-            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
           </span>
           <button class="nav-arrow prev" id="prevBtn" aria-label="Poprzedni">
-            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
           </button>
           <button class="nav-arrow next" id="nextBtn" aria-label="Następny">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
           <img class="morph-image active" src="https://przechowaj.vercode.pl/file/view/1b359cc1340545b48aab28ff9a4b9623/Gemini_Generated_Image_s1n2hqs1n2hqs1n2.jpg" alt="Panel główny" />
           <img class="morph-image" src="https://picsum.photos/seed/vercode-bot-list/1000/625" alt="Lista botów" />
@@ -1124,82 +1202,83 @@
 <section class="features container" id="funkcje">
   <div class="section-head" data-reveal>
     <span class="eyebrow">
-      <svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
-      Funkcje
+      <svg viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"/></svg>
+      Co dostajesz
     </span>
-    <h2>Dlaczego VerCode?</h2>
-    <p>Prostota i kontrola nad Twoimi projektami. Bez kompromisów.</p>
+    <h2>Konkretne rzeczy, które robią różnicę</h2>
+    <p>Bez marketingowego lania wody. Po prostu to, co potrzebujesz.</p>
   </div>
   <div class="grid">
     <div class="card3d" data-reveal>
       <div class="feature-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="4" width="18" height="6" rx="2"/>
-          <rect x="3" y="14" width="18" height="6" rx="2"/>
-          <circle class="pulse" cx="6" cy="7" r="1" fill="#c4caff"/>
-          <circle class="pulse" cx="6" cy="17" r="1" fill="#c4caff"/>
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="3" width="20" height="8" rx="2"/>
+          <rect x="2" y="13" width="20" height="8" rx="2"/>
+          <line class="pulse" x1="6" y1="7" x2="6.01" y2="7"/>
+          <line class="pulse" x1="6" y1="17" x2="6.01" y2="17"/>
         </svg>
       </div>
-      <h3>Hosting Lokalny</h3>
-      <p>Pełna kontrola nad zasobami. Żadnych limitów chmury, korzystasz z mocy swojego komputera.</p>
+      <h3>Wszystko u Ciebie</h3>
+      <p>Boty działają na Twoim sprzęcie. Bez limitów, bez opłat za chmurę, bez czekania.</p>
     </div>
     <div class="card3d" data-reveal>
       <div class="feature-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 4L3 12l5 8"/>
-          <path d="M16 4l5 8-5 8"/>
-          <path class="pulse" d="M14 6l-4 12"/>
+        <svg viewBox="0 0 24 24">
+          <polyline points="16 18 22 12 16 6"/>
+          <polyline points="8 6 2 12 8 18"/>
+          <line class="pulse" x1="14" y1="4" x2="10" y2="20"/>
         </svg>
       </div>
-      <h3>JS & Python</h3>
-      <p>Nieważne w czym piszesz. VerCode obsługuje Node.js oraz Pythona w tym samym interfejsie.</p>
+      <h3>JS &amp; Python</h3>
+      <p>Lubisz Node.js? Piszesz w Pythonie? Oba działają w jednym panelu - bez skakania między narzędziami.</p>
     </div>
     <div class="card3d" data-reveal>
       <div class="feature-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/>
-          <path class="pulse" d="M9 12l2 2 4-4"/>
+        <svg viewBox="0 0 24 24">
+          <path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z"/>
+          <polyline class="pulse" points="9 12 11 14 15 10"/>
         </svg>
       </div>
-      <h3>Bezpieczeństwo Plików</h3>
-      <p>Aplikacja nie wysyła Twojego kodu nigdzie indziej. Wszystko jest przechowywane lokalnie.</p>
+      <h3>Twój kod, Twoja sprawa</h3>
+      <p>Twój kod nigdzie nie wyjeżdża. Zero chmury, zero wysyłania, zero niespodzianek.</p>
     </div>
     <div class="card3d" data-reveal>
       <div class="feature-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="8" height="8" rx="1.5"/>
-          <rect x="13" y="3" width="8" height="8" rx="1.5"/>
-          <rect x="3" y="13" width="8" height="8" rx="1.5"/>
-          <rect class="pulse" x="13" y="13" width="8" height="8" rx="1.5"/>
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+          <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+          <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+          <rect class="pulse" x="14" y="14" width="7" height="7" rx="1.5"/>
         </svg>
       </div>
-      <h3>Wszystko w Jednym</h3>
-      <p>Zarządzaj wieloma botami z jednego panelu. Bez przełączania się między projektami.</p>
+      <h3>Wszystko w jednym oknie</h3>
+      <p>Włączasz jednego bota, sprawdzasz drugiego - bez skakania po folderach i terminalach.</p>
     </div>
     <div class="card3d" data-reveal>
       <div class="feature-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="9"/>
-          <path class="pulse" d="M10 8l6 4-6 4V8z" fill="#c4caff" stroke="none"/>
+          <path class="pulse" d="M10 8.5v7l6-3.5-6-3.5z" fill="#c4caff"/>
         </svg>
       </div>
-      <h3>Start & Stop</h3>
-      <p>Proste sterowanie każdym botem - uruchamiaj, zatrzymuj i sprawdzaj status bez konfiguracji.</p>
+      <h3>Start i stop</h3>
+      <p>Klik i działa. Klik i stoi. Status widzisz od razu, bez grzebania w konsoli.</p>
     </div>
     <div class="card3d" data-reveal>
       <div class="feature-icon">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 16c2-2 4-2 6 0s4 2 6 0 4-2 4 0"/>
-          <path class="pulse" d="M4 10c2-2 4-2 6 0s4 2 6 0 4-2 4 0"/>
+        <svg viewBox="0 0 24 24">
+          <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/>
+          <path class="pulse" d="M9.6 4.6A2 2 0 1 1 11 8H2"/>
+          <path d="M12.6 19.4A2 2 0 1 0 14 16H2"/>
         </svg>
       </div>
-      <h3>Mniej Stresu</h3>
-      <p>Skup się na tworzeniu botów, a nie na pilnowaniu plików i bałaganie w folderach.</p>
+      <h3>Mniej stresu</h3>
+      <p>Robisz bota, nie zajmujesz się plikami. Reszta dzieje się sama.</p>
     </div>
   </div>
 </section>
 
-<section class="cta-band" id="pobierz">
+<section class="cta-band" id="premiera">
   <div class="container">
     <div class="cta-card" data-reveal>
       <div class="cta-deco">
@@ -1213,23 +1292,21 @@
           <polygon points="120,70 180,180 60,180" fill="none" stroke="rgba(139,92,246,0.25)" stroke-width="1"/>
         </svg>
       </div>
-      <h2>Przejmij kontrolę nad swoimi botami</h2>
-      <p>Pobierz VerCode Bot Manager i zarządzaj botami lokalnie - bezpiecznie, wygodnie i bez bałaganu.</p>
+      <h2>Premiera tuż tuż</h2>
+      <p>Dopracowujemy ostatnie szczegóły. Zajrzyj tu wkrótce - będzie warto.</p>
       <div class="hero-actions">
-        <a href="#" class="btn btn-primary">
-          <span>Pobierz teraz</span>
-          <svg class="btn-icon icon-spark" viewBox="0 0 24 24">
-            <path class="dl-arrow" d="M11 4v10"/>
-            <path class="dl-head" d="M6 9l5 5 5-5"/>
-            <path class="dl-tray" d="M4 19h14"/>
-            <path class="spark" d="M19 3l.7 2L21.5 5.5l-1.8.6L19 8l-.7-1.9-1.8-.6 1.8-.5L19 3z" fill="currentColor" stroke="none"/>
+        <span class="btn btn-soon">
+          <span>Wkrótce dostępne</span>
+          <svg class="btn-icon icon-clock" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"/>
+            <polyline class="clock-hand" points="12 7 12 12 15.5 14"/>
           </svg>
-        </a>
+        </span>
         <a href="#funkcje" class="btn btn-glass">
-          <span>Dowiedz się więcej</span>
+          <span>Zobacz funkcje</span>
           <svg class="btn-icon icon-compass" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="9"/>
-            <polygon class="compass-needle" points="16 8 10 10 8 16 14 14"/>
+            <polygon class="compass-needle" points="16 8 10 10 8 16 14 14 16 8"/>
           </svg>
         </a>
       </div>
@@ -1240,25 +1317,24 @@
 <footer>
   <div class="container footer-inner">
     <span class="footer-brand">
-      <span class="brand-mark">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 3h4.5L12 12.5 15.5 3H20l-6.2 18h-3.6L4 3z"/>
-        </svg>
+      <span class="brand-logo-wrap">
+        <img src="logo.png" alt="VerCode" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+        <svg class="brand-fallback" viewBox="0 0 24 24" style="display:none"><path d="M4 3h4.5L12 12.5 15.5 3H20l-6.2 18h-3.6L4 3z"/></svg>
       </span>
-      VerCode Bot Manager - Twoje boty lokalnie.
+      VerCode - Twoje boty lokalnie.
     </span>
     <nav class="footer-links">
       <a href="#funkcje">
         Funkcje
-        <svg viewBox="0 0 24 24"><path d="M8.6 16.6L13.2 12 8.6 7.4 10 6l6 6-6 6z"/></svg>
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
       <a href="#podglad">
         Podgląd
-        <svg viewBox="0 0 24 24"><path d="M8.6 16.6L13.2 12 8.6 7.4 10 6l6 6-6 6z"/></svg>
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
-      <a href="#pobierz">
-        Pobierz
-        <svg viewBox="0 0 24 24"><path d="M8.6 16.6L13.2 12 8.6 7.4 10 6l6 6-6 6z"/></svg>
+      <a href="#premiera">
+        Premiera
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
     </nav>
   </div>
@@ -1266,13 +1342,13 @@
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lbClose" aria-label="Zamknij">
-    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
   <button class="lightbox-nav prev" id="lbPrev" aria-label="Poprzedni">
-    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
   </button>
   <button class="lightbox-nav next" id="lbNext" aria-label="Następny">
-    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
   </button>
   <div class="lightbox-inner" id="lightboxInner">
     <img id="lbImage" src="" alt="" />
