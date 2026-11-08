@@ -3,16 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>VerCode Bot Manager - Zarzadzaj botami lokalnie</title>
-  <meta name="description" content="Zarzadzaj botami w JS i Python bez stresu o pliki. Hosting lokalny, pelna kontrola." />
-
+  <meta name="theme-color" content="#05060a" />
+  <title>VerCode Bot Manager - Zarządzaj botami lokalnie</title>
+  <meta name="description" content="Zarządzaj botami w JS i Python bez stresu o pliki. Hosting lokalny, pełna kontrola." />
   <meta property="og:title" content="VerCode Bot Manager - Twoje boty lokalnie" />
-  <meta property="og:description" content="Zarzadzaj botami w JS i Python w jednej aplikacji. Twoje pliki zostaja u Ciebie." />
+  <meta property="og:description" content="Zarządzaj botami w JS i Python w jednej aplikacji. Twoje pliki zostają u Ciebie." />
   <meta property="og:image" content="https://przechowaj.vercode.pl/file/view/1b359cc1340545b48aab28ff9a4b9623/Gemini_Generated_Image_s1n2hqs1n2hqs1n2.jpg" />
   <meta property="og:url" content="https://twojadomena.pl/" />
   <meta property="og:type" content="website" />
-
   <meta name="twitter:card" content="summary_large_image" />
 
   <script id="discord:component-embed" type="application/json">
@@ -26,27 +24,24 @@
           "components": [
             {
               "type": 10,
-              "content": "# **VerCode Bot Manager**\nZarzadzaj swoimi botami bez obaw o pliki i ich przypadkowe usuniecie."
+              "content": "# **VerCode Bot Manager**\nZarządzaj swoimi botami bez obaw o pliki i ich przypadkowe usunięcie."
             }
           ],
           "accessory": {
             "type": 2,
             "style": 5,
             "url": "https://vern0xx.github.io/vercode/",
-            "label": "Otworz strone"
+            "label": "Otwórz stronę"
           }
         },
         {
           "type": 10,
-          "content": "Kazdy bot hostujesz **lokalnie** - niezaleznie od tego, czy tworzysz w **JavaScript**, czy w **Python**. Wszystkie boty w jednym miejscu, pelna kontrola nad plikami."
+          "content": "Każdy bot hostujesz **lokalnie** - niezależnie od tego, czy tworzysz w **JavaScript**, czy w **Python**. Wszystkie boty w jednym miejscu, pełna kontrola nad plikami."
         },
-        {
-          "type": 14,
-          "spacing": 1
-        },
+        { "type": 14, "spacing": 1 },
         {
           "type": 10,
-          "content": "- Hosting lokalny\n- Obsluga JS i Python\n- Wieksza kontrola nad plikami\n- Mniej stresu o przypadkowe usuniecie"
+          "content": "- Hosting lokalny\n- Obsługa JS i Python\n- Większa kontrola nad plikami\n- Mniej stresu o przypadkowe usunięcie"
         },
         {
           "type": 12,
@@ -55,6 +50,7 @@
               "media": {
                 "url": "https://przechowaj.vercode.pl/file/view/1b359cc1340545b48aab28ff9a4b9623/Gemini_Generated_Image_s1n2hqs1n2hqs1n2.jpg"
               },
+              "description": "Podgląd VerCode Bot Manager"
             }
           ]
         },
@@ -62,9 +58,1431 @@
     }
   }
   </script>
+
+  <style>
+    :root {
+      --bg: #05060a;
+      --text: #f2f4fa;
+      --muted: #939ab0;
+      --accent: #5865f2;
+      --accent-hover: #4752c4;
+      --accent-soft: rgba(88,101,242,0.16);
+      --accent-line: rgba(88,101,242,0.42);
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    ::selection { background: var(--accent); color: #fff; }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 10px; border: 2px solid var(--bg); }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.16); }
+
+    body {
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body.lock { overflow: hidden; }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+    section[id] { scroll-margin-top: 100px; }
+
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s var(--ease-bounce), transform 0.75s var(--ease-bounce);
+    }
+    [data-reveal].revealed { opacity: 1; transform: translateY(0); }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: var(--accent);
+      display: grid;
+      place-items: center;
+      box-shadow:
+        0 0 22px rgba(88,101,242,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -1px 0 rgba(0,0,0,0.25);
+      transition: transform 0.35s var(--ease-bounce), box-shadow 0.35s var(--ease);
+      flex-shrink: 0;
+    }
+
+    .brand-mark svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+      transition: transform 0.5s var(--ease-bounce);
+    }
+
+    .brand:hover .brand-mark { transform: rotate(-6deg) scale(1.06); box-shadow: 0 0 32px rgba(88,101,242,0.8), inset 0 1px 0 rgba(255,255,255,0.3); }
+    .brand:hover .brand-mark svg { transform: rotate(6deg) scale(1.05); }
+
+    nav.top {
+      position: fixed;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: calc(100% - 48px);
+      max-width: 1120px;
+      padding: 10px 14px 10px 22px;
+      border-radius: 999px;
+      background: rgba(10, 12, 20, 0.6);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow:
+        0 14px 44px rgba(0,0,0,0.55),
+        inset 0 1px 0 rgba(255,255,255,0.16),
+        inset 0 -1px 0 rgba(0,0,0,0.25);
+      animation: navDrop 0.75s var(--ease-bounce) both;
+    }
+
+    @keyframes navDrop {
+      from { opacity: 0; transform: translateX(-50%) translateY(-24px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1rem; letter-spacing: -0.01em; }
+
+    .nav-pill-container { position: relative; display: flex; align-items: center; padding: 4px; }
+
+    .nav-pill {
+      position: absolute;
+      height: calc(100% - 8px);
+      top: 4px;
+      left: 0;
+      width: 0;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 6px 16px rgba(0,0,0,0.25);
+      transition: all 0.45s var(--ease-bounce);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .nav-pill-container a {
+      position: relative;
+      z-index: 1;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color 0.25s var(--ease);
+      border-radius: 999px;
+    }
+
+    .nav-pill-container a:hover,
+    .nav-pill-container a.active { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 22px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.3s var(--ease-bounce), background 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.3s var(--ease);
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+      will-change: transform;
+    }
+
+    .btn-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.4s var(--ease-bounce);
+      overflow: visible;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      box-shadow: 0 8px 26px rgba(88,101,242,0.45), inset 0 1px 0 rgba(255,255,255,0.3);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(88,101,242,0.62), inset 0 1px 0 rgba(255,255,255,0.35);
+    }
+    .btn-primary:active { transform: translateY(0) scale(0.98); }
+
+    .btn-glass {
+      background: rgba(255,255,255,0.055);
+      backdrop-filter: blur(22px) saturate(180%);
+      -webkit-backdrop-filter: blur(22px) saturate(180%);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: var(--text);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), 0 6px 18px rgba(0,0,0,0.25);
+    }
+    .btn-glass:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.24);
+      transform: translateY(-2px);
+    }
+    .btn-glass:active { transform: translateY(0) scale(0.98); }
+
+    .btn:hover .icon-dl .dl-arrow,
+    .btn:hover .icon-dl .dl-head { transform: translateY(3px); }
+    .btn:hover .icon-rocket { transform: translateY(-3px) rotate(-12deg); }
+    .btn:hover .icon-rocket .r-fire { opacity: 0.6; }
+    .btn:hover .icon-eye .eye-pupil { transform: scale(1.35); }
+    .btn:hover .icon-spark .spark { transform: rotate(180deg) scale(1.25); }
+    .btn:hover .icon-spark .dl-arrow,
+    .btn:hover .icon-spark .dl-head { transform: translateY(3px); }
+    .btn:hover .icon-compass .compass-needle { transform: rotate(60deg); }
+    .btn:hover .icon-compass { transform: rotate(15deg); }
+
+    .icon-dl .dl-arrow, .icon-dl .dl-head,
+    .icon-spark .dl-arrow, .icon-spark .dl-head {
+      transition: transform 0.4s var(--ease-bounce);
+    }
+    .icon-rocket .r-fire { transition: opacity 0.3s var(--ease); }
+    .icon-eye .eye-pupil { transition: transform 0.4s var(--ease-bounce); transform-origin: 12px 12px; transform-box: view-box; }
+    .icon-spark .spark { transform-origin: 12px 12px; transform-box: view-box; transition: transform 0.5s var(--ease-bounce); }
+    .icon-compass .compass-needle { transform-origin: 12px 12px; transform-box: view-box; transition: transform 0.7s var(--ease-bounce); }
+
+    .hero {
+      padding-top: 170px;
+      padding-bottom: 110px;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 70px;
+      align-items: center;
+      min-height: 88vh;
+      position: relative;
+    }
+
+    .hero-content { display: flex; flex-direction: column; align-items: flex-start; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #b8beff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 26px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+      animation: fadeUp 0.85s var(--ease-bounce) 0.1s both;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #7cffb2;
+      box-shadow: 0 0 12px #7cffb2;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(1.18); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(26px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-brand-large {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      animation: fadeUp 0.85s var(--ease-bounce) 0.18s both;
+    }
+
+    .hero-brand-large .brand-mark {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+    }
+
+    .hero-brand-large .brand-mark svg { width: 30px; height: 30px; }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.7rem);
+      line-height: 1.05;
+      font-weight: 800;
+      margin-bottom: 22px;
+      letter-spacing: -0.035em;
+      color: #fff;
+      animation: fadeUp 0.9s var(--ease-bounce) 0.26s both;
+    }
+
+    .hero h1 .accent { color: var(--accent); }
+
+    .hero p.lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin-bottom: 34px;
+      max-width: 520px;
+      animation: fadeUp 0.9s var(--ease-bounce) 0.34s both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 38px;
+      animation: fadeUp 0.9s var(--ease-bounce) 0.42s both;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 34px;
+      flex-wrap: wrap;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      animation: fadeUp 0.9s var(--ease-bounce) 0.5s both;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      transition: transform 0.35s var(--ease-bounce);
+    }
+    .stat:hover { transform: translateY(-3px); }
+    .stat .num {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .stat .lbl {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      perspective: 1400px;
+      animation: fadeUp 1s var(--ease-bounce) 0.3s both;
+    }
+
+    .morph-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/10;
+      transform-style: preserve-3d;
+      transition: transform 0.35s var(--ease);
+      will-change: transform;
+    }
+
+    .morph-bounce {
+      position: absolute;
+      inset: 0;
+      animation: bounceCard 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    }
+
+    @keyframes bounceCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+
+    .morph-glow {
+      position: absolute;
+      inset: -30px;
+      background: radial-gradient(circle at 50% 50%, rgba(88,101,242,0.35), transparent 60%);
+      filter: blur(40px);
+      z-index: 0;
+      pointer-events: none;
+      animation: glowPulse 4s ease-in-out infinite;
+      transition: opacity 0.4s var(--ease);
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    .morph-container {
+      position: absolute;
+      inset: 0;
+      border-radius: 26px;
+      overflow: hidden;
+      background: #0a0c12;
+      box-shadow:
+        0 70px 140px -40px rgba(0,0,0,0.9),
+        0 40px 80px -30px rgba(88,101,242,0.5);
+      z-index: 1;
+      cursor: zoom-in;
+      transition: box-shadow 0.5s var(--ease);
+    }
+
+    .morph-wrap:hover .morph-container {
+      box-shadow:
+        0 90px 180px -40px rgba(0,0,0,0.95),
+        0 60px 120px -30px rgba(88,101,242,0.75);
+    }
+
+    .morph-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.14);
+      transition: opacity 1.1s var(--ease), transform 6s ease-out;
+      filter: saturate(1.08) contrast(1.06);
+      pointer-events: none;
+    }
+
+    .morph-image.active { opacity: 1; transform: scale(1); }
+
+    .morph-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5,6,10,0.8) 0%, rgba(5,6,10,0.15) 35%, transparent 60%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .morph-label {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #fff;
+      z-index: 5;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.22);
+      transition: opacity 0.3s var(--ease);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .morph-label::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #7cffb2;
+      box-shadow: 0 0 8px #7cffb2;
+      animation: pulse 1.6s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    .zoom-hint {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255,255,255,0.18);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      z-index: 5;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.22);
+      transition: transform 0.3s var(--ease-bounce), background 0.25s var(--ease);
+    }
+
+    .morph-container:hover .zoom-hint { transform: scale(1.12) rotate(-6deg); background: rgba(88,101,242,0.75); }
+
+    .zoom-hint svg { width: 16px; height: 16px; fill: #fff; }
+
+    .morph-progress {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      right: 18px;
+      display: flex;
+      gap: 8px;
+      z-index: 5;
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 3px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.25s var(--ease), height 0.25s var(--ease);
+    }
+
+    .progress-bar:hover { background: rgba(255,255,255,0.3); height: 4px; }
+
+    .progress-bar::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      transform: scaleX(0);
+      transform-origin: left;
+      border-radius: 999px;
+    }
+
+    .progress-bar.active::after { animation: fill 5s linear forwards; }
+    .progress-bar.done::after { transform: scaleX(1); transition: transform 0.35s var(--ease); }
+
+    @keyframes fill {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      z-index: 6;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.3s var(--ease), transform 0.3s var(--ease-bounce), background 0.25s var(--ease);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.22);
+    }
+
+    .morph-container:hover .nav-arrow { opacity: 1; }
+    .nav-arrow:hover { background: var(--accent); transform: translateY(-50%) scale(1.12); }
+    .nav-arrow:active { transform: translateY(-50%) scale(0.96); }
+    .nav-arrow.prev { left: 14px; }
+    .nav-arrow.next { right: 14px; }
+    .nav-arrow svg { width: 18px; height: 18px; fill: #fff; }
+
+    section.features { padding: 110px 0 80px; position: relative; }
+
+    .section-head { text-align: center; margin-bottom: 70px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #aab2ff;
+      margin-bottom: 18px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(88,101,242,0.12);
+      border: 1px solid var(--accent-line);
+      backdrop-filter: blur(20px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    .eyebrow svg { width: 14px; height: 14px; fill: currentColor; }
+
+    .section-head h2 {
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 1.02rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+      perspective: 1200px;
+    }
+
+    .card3d {
+      position: relative;
+      border-radius: 24px;
+      padding: 34px;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.16),
+        0 12px 34px -12px rgba(0,0,0,0.5);
+      transition: transform 0.3s var(--ease), border-color 0.35s var(--ease), box-shadow 0.45s var(--ease);
+      transform-style: preserve-3d;
+      will-change: transform;
+      overflow: hidden;
+    }
+
+    .card3d[data-reveal]:nth-child(1) { transition-delay: 0s; }
+    .card3d[data-reveal]:nth-child(2) { transition-delay: 0.06s; }
+    .card3d[data-reveal]:nth-child(3) { transition-delay: 0.12s; }
+    .card3d[data-reveal]:nth-child(4) { transition-delay: 0.18s; }
+    .card3d[data-reveal]:nth-child(5) { transition-delay: 0.24s; }
+    .card3d[data-reveal]:nth-child(6) { transition-delay: 0.3s; }
+
+    .card3d::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      background: radial-gradient(circle 240px at var(--mx, 50%) var(--my, 50%), rgba(88,101,242,0.22), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s var(--ease);
+      pointer-events: none;
+    }
+
+    .card3d:hover::before { opacity: 1; }
+
+    .card3d:hover {
+      border-color: rgba(88,101,242,0.45);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.22),
+        0 34px 74px -22px rgba(88,101,242,0.55),
+        0 22px 44px -22px rgba(0,0,0,0.55);
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-line);
+      margin-bottom: 22px;
+      color: #c4caff;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.22),
+        0 10px 24px -8px rgba(88,101,242,0.55);
+      transform: translateZ(48px);
+      transition: transform 0.4s var(--ease-bounce), background 0.35s var(--ease);
+    }
+
+    .feature-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: #c4caff;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.35s var(--ease);
+    }
+
+    .card3d:hover .feature-icon {
+      background: rgba(88,101,242,0.3);
+      transform: translateZ(48px) rotate(-4deg) scale(1.06);
+    }
+
+    .card3d:hover .feature-icon .pulse { animation: svgPulse 1.2s ease-in-out infinite; }
+
+    @keyframes svgPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+
+    .card3d h3 {
+      font-size: 1.12rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.015em;
+      transform: translateZ(32px);
+    }
+
+    .card3d p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      transform: translateZ(18px);
+    }
+
+    .cta-band { padding: 30px 0 110px; position: relative; }
+
+    .cta-card {
+      position: relative;
+      border-radius: 30px;
+      padding: 90px 40px;
+      text-align: center;
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(36px) saturate(190%);
+      -webkit-backdrop-filter: blur(36px) saturate(190%);
+      border: 1px solid rgba(255,255,255,0.13);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.2),
+        inset 0 -1px 0 rgba(0,0,0,0.28),
+        0 46px 110px -32px rgba(88,101,242,0.5);
+    }
+
+    .cta-card::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      width: 60%;
+      height: 120%;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse, rgba(88,101,242,0.22), transparent 60%);
+      pointer-events: none;
+      filter: blur(50px);
+    }
+
+    .cta-card h2 {
+      position: relative;
+      font-size: clamp(1.9rem, 4vw, 2.85rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+    }
+
+    .cta-card p {
+      position: relative;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 38px;
+      font-size: 1.02rem;
+    }
+
+    .cta-card .hero-actions {
+      position: relative;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    .cta-deco {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      border-radius: 30px;
+    }
+
+    .cta-deco svg { position: absolute; opacity: 0.35; }
+    .cta-deco .deco-1 { top: -20px; left: -20px; width: 220px; }
+    .cta-deco .deco-2 { bottom: -20px; right: -20px; width: 260px; }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 40px 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .footer-brand .brand-mark { width: 26px; height: 26px; border-radius: 8px; }
+    .footer-brand .brand-mark svg { width: 15px; height: 15px; }
+
+    .footer-links { display: flex; gap: 24px; }
+
+    .footer-links a {
+      transition: color 0.2s var(--ease);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-links a svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+      opacity: 0.6;
+      transition: transform 0.3s var(--ease-bounce), opacity 0.25s var(--ease);
+    }
+
+    .footer-links a:hover svg { transform: translateX(3px); opacity: 1; }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(3, 4, 8, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 40px;
+      animation: fadeIn 0.28s var(--ease);
+    }
+
+    .lightbox.open { display: flex; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 92vw;
+      max-height: 88vh;
+      border-radius: 20px;
+      overflow: hidden;
+      perspective: 1400px;
+      box-shadow:
+        0 60px 140px -20px rgba(0,0,0,0.9),
+        0 0 80px rgba(88,101,242,0.35);
+      animation: zoomIn 0.4s var(--ease-bounce);
+      transition: box-shadow 0.5s var(--ease);
+    }
+
+    .lightbox-inner:hover {
+      box-shadow:
+        0 70px 160px -20px rgba(0,0,0,0.95),
+        0 0 120px rgba(88,101,242,0.55);
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .lightbox-inner img {
+      display: block;
+      max-width: 92vw;
+      max-height: 88vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.3s var(--ease), opacity 0.4s var(--ease);
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      z-index: 10;
+      transition: background 0.25s var(--ease), transform 0.35s var(--ease-bounce);
+    }
+
+    .lightbox-close:hover { background: var(--accent); transform: scale(1.1) rotate(90deg); }
+    .lightbox-close:active { transform: scale(0.95) rotate(90deg); }
+    .lightbox-close svg { width: 20px; height: 20px; fill: #fff; }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      z-index: 10;
+      transition: background 0.25s var(--ease), transform 0.3s var(--ease-bounce);
+    }
+
+    .lightbox-nav:hover { background: var(--accent); transform: translateY(-50%) scale(1.12); }
+    .lightbox-nav:active { transform: translateY(-50%) scale(0.96); }
+    .lightbox-nav.prev { left: 20px; }
+    .lightbox-nav.next { right: 20px; }
+    .lightbox-nav svg { width: 22px; height: 22px; fill: #fff; }
+
+    .lightbox-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      z-index: 10;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.22);
+    }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 140px; gap: 50px; }
+      .hero-content { align-items: center; }
+      .hero p.lead { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-brand-large { justify-content: center; }
+      .nav-pill-container { display: none; }
+      .cta-card { padding: 70px 24px; }
+      section.features { padding: 90px 0 70px; }
+      .lightbox { padding: 16px; }
+      .lightbox-nav { width: 44px; height: 44px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
 <body>
-  <h1>VerCode Bot Manager</h1>
-  <p>Ta strona sluzy jako zrodlo podgladu linku (Component Embed) dla Discorda.</p>
+
+<nav class="top">
+  <a href="/logo.png" class="brand">
+    <span>VerCode</span>
+  </a>
+  <div class="nav-pill-container" id="navPillContainer">
+    <div class="nav-pill" id="navPill"></div>
+    <a href="#funkcje" class="nav-link">Funkcje</a>
+    <a href="#podglad" class="nav-link">Podgląd</a>
+    <a href="#pobierz" class="nav-link">Pobierz</a>
+  </div>
+  <a href="#pobierz" class="btn btn-primary">
+    <span>Pobierz</span>
+    <svg class="btn-icon icon-dl" viewBox="0 0 24 24">
+      <path class="dl-arrow" d="M12 4v10"/>
+      <path class="dl-head" d="M7 9l5 5 5-5"/>
+      <path class="dl-tray" d="M5 19h14"/>
+    </svg>
+  </a>
+</nav>
+
+<section class="hero container" id="podglad">
+  <div class="hero-content">
+    <span class="hero-badge">
+      <span class="dot"></span>
+      Hosting lokalny · Twoje pliki pod kontrolą
+    </span>
+    <div class="hero-brand-large">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 3h4.5L12 12.5 15.5 3H20l-6.2 18h-3.6L4 3z"/>
+        </svg>
+      </span>
+      <span>VerCode Bot Manager</span>
+    </div>
+    <h1>Zarządzaj botami<br><span class="accent">lokalnie i bezpiecznie.</span></h1>
+    <p class="lead">
+      VerCode Bot Manager to centrum dowodzenia dla Twoich projektów.
+      Obsługa JavaScript i Python w jednym miejscu. Twoje pliki zostają na Twoim dysku.
+    </p>
+    <div class="hero-actions">
+      <a href="#pobierz" class="btn btn-primary">
+        <span>Pobierz za darmo</span>
+        <svg class="btn-icon icon-rocket" viewBox="0 0 24 24">
+          <path d="M12 3c2 0 3.7 1.4 4.7 3.5 1 2.1 1 4.7-.3 7.4L12 18l-4.4-4.1C6.3 11.2 6.3 8.6 7.3 6.5 8.3 4.4 10 3 12 3z"/>
+          <circle class="r-window" cx="12" cy="9.5" r="1.6"/>
+          <path class="r-fire" d="M9 18l-2 3 5-1.5"/>
+          <path class="r-fire" d="M15 18l2 3-5-1.5"/>
+        </svg>
+      </a>
+      <a href="#funkcje" class="btn btn-glass">
+        <span>Dowiedz się więcej</span>
+        <svg class="btn-icon icon-eye" viewBox="0 0 24 24">
+          <path d="M2 12c2-3.5 6-7 10-7s8 3.5 10 7c-2 3.5-6 7-10 7S4 15.5 2 12z"/>
+          <circle class="eye-pupil" cx="12" cy="12" r="3"/>
+        </svg>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="num">100%</span>
+        <span class="lbl">Lokalnie</span>
+      </div>
+      <div class="stat">
+        <span class="num">JS + PY</span>
+        <span class="lbl">Dwa środowiska</span>
+      </div>
+      <div class="stat">
+        <span class="num">∞</span>
+        <span class="lbl">Botów</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="morph-wrap" id="morphWrap">
+      <div class="morph-glow"></div>
+      <div class="morph-bounce">
+        <div class="morph-container" id="morphContainer">
+          <div class="morph-overlay"></div>
+          <span class="morph-label" id="morphLabel">Panel główny</span>
+          <span class="zoom-hint">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm2.5-4h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>
+          </span>
+          <button class="nav-arrow prev" id="prevBtn" aria-label="Poprzedni">
+            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          </button>
+          <button class="nav-arrow next" id="nextBtn" aria-label="Następny">
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </button>
+          <img class="morph-image active" src="https://przechowaj.vercode.pl/file/view/1b359cc1340545b48aab28ff9a4b9623/Gemini_Generated_Image_s1n2hqs1n2hqs1n2.jpg" alt="Panel główny" />
+          <img class="morph-image" src="https://picsum.photos/seed/vercode-bot-list/1000/625" alt="Lista botów" />
+          <img class="morph-image" src="https://picsum.photos/seed/vercode-console/1000/625" alt="Konsola" />
+          <img class="morph-image" src="https://picsum.photos/seed/vercode-settings/1000/625" alt="Ustawienia" />
+          <div class="morph-progress" id="morphProgress">
+            <div class="progress-bar active"></div>
+            <div class="progress-bar"></div>
+            <div class="progress-bar"></div>
+            <div class="progress-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features container" id="funkcje">
+  <div class="section-head" data-reveal>
+    <span class="eyebrow">
+      <svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+      Funkcje
+    </span>
+    <h2>Dlaczego VerCode?</h2>
+    <p>Prostota i kontrola nad Twoimi projektami. Bez kompromisów.</p>
+  </div>
+  <div class="grid">
+    <div class="card3d" data-reveal>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="4" width="18" height="6" rx="2"/>
+          <rect x="3" y="14" width="18" height="6" rx="2"/>
+          <circle class="pulse" cx="6" cy="7" r="1" fill="#c4caff"/>
+          <circle class="pulse" cx="6" cy="17" r="1" fill="#c4caff"/>
+        </svg>
+      </div>
+      <h3>Hosting Lokalny</h3>
+      <p>Pełna kontrola nad zasobami. Żadnych limitów chmury, korzystasz z mocy swojego komputera.</p>
+    </div>
+    <div class="card3d" data-reveal>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 4L3 12l5 8"/>
+          <path d="M16 4l5 8-5 8"/>
+          <path class="pulse" d="M14 6l-4 12"/>
+        </svg>
+      </div>
+      <h3>JS & Python</h3>
+      <p>Nieważne w czym piszesz. VerCode obsługuje Node.js oraz Pythona w tym samym interfejsie.</p>
+    </div>
+    <div class="card3d" data-reveal>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/>
+          <path class="pulse" d="M9 12l2 2 4-4"/>
+        </svg>
+      </div>
+      <h3>Bezpieczeństwo Plików</h3>
+      <p>Aplikacja nie wysyła Twojego kodu nigdzie indziej. Wszystko jest przechowywane lokalnie.</p>
+    </div>
+    <div class="card3d" data-reveal>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="8" height="8" rx="1.5"/>
+          <rect x="13" y="3" width="8" height="8" rx="1.5"/>
+          <rect x="3" y="13" width="8" height="8" rx="1.5"/>
+          <rect class="pulse" x="13" y="13" width="8" height="8" rx="1.5"/>
+        </svg>
+      </div>
+      <h3>Wszystko w Jednym</h3>
+      <p>Zarządzaj wieloma botami z jednego panelu. Bez przełączania się między projektami.</p>
+    </div>
+    <div class="card3d" data-reveal>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9"/>
+          <path class="pulse" d="M10 8l6 4-6 4V8z" fill="#c4caff" stroke="none"/>
+        </svg>
+      </div>
+      <h3>Start & Stop</h3>
+      <p>Proste sterowanie każdym botem - uruchamiaj, zatrzymuj i sprawdzaj status bez konfiguracji.</p>
+    </div>
+    <div class="card3d" data-reveal>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 16c2-2 4-2 6 0s4 2 6 0 4-2 4 0"/>
+          <path class="pulse" d="M4 10c2-2 4-2 6 0s4 2 6 0 4-2 4 0"/>
+        </svg>
+      </div>
+      <h3>Mniej Stresu</h3>
+      <p>Skup się na tworzeniu botów, a nie na pilnowaniu plików i bałaganie w folderach.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="pobierz">
+  <div class="container">
+    <div class="cta-card" data-reveal>
+      <div class="cta-deco">
+        <svg class="deco-1" viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(88,101,242,0.4)" stroke-width="1" stroke-dasharray="3 6"/>
+          <circle cx="100" cy="100" r="50" fill="none" stroke="rgba(88,101,242,0.3)" stroke-width="1"/>
+          <circle cx="100" cy="20" r="3" fill="#5865f2"/>
+        </svg>
+        <svg class="deco-2" viewBox="0 0 240 240" aria-hidden="true">
+          <polygon points="120,30 210,200 30,200" fill="none" stroke="rgba(139,92,246,0.35)" stroke-width="1"/>
+          <polygon points="120,70 180,180 60,180" fill="none" stroke="rgba(139,92,246,0.25)" stroke-width="1"/>
+        </svg>
+      </div>
+      <h2>Przejmij kontrolę nad swoimi botami</h2>
+      <p>Pobierz VerCode Bot Manager i zarządzaj botami lokalnie - bezpiecznie, wygodnie i bez bałaganu.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary">
+          <span>Pobierz teraz</span>
+          <svg class="btn-icon icon-spark" viewBox="0 0 24 24">
+            <path class="dl-arrow" d="M11 4v10"/>
+            <path class="dl-head" d="M6 9l5 5 5-5"/>
+            <path class="dl-tray" d="M4 19h14"/>
+            <path class="spark" d="M19 3l.7 2L21.5 5.5l-1.8.6L19 8l-.7-1.9-1.8-.6 1.8-.5L19 3z" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="#funkcje" class="btn btn-glass">
+          <span>Dowiedz się więcej</span>
+          <svg class="btn-icon icon-compass" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"/>
+            <polygon class="compass-needle" points="16 8 10 10 8 16 14 14"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span class="footer-brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 3h4.5L12 12.5 15.5 3H20l-6.2 18h-3.6L4 3z"/>
+        </svg>
+      </span>
+      VerCode Bot Manager - Twoje boty lokalnie.
+    </span>
+    <nav class="footer-links">
+      <a href="#funkcje">
+        Funkcje
+        <svg viewBox="0 0 24 24"><path d="M8.6 16.6L13.2 12 8.6 7.4 10 6l6 6-6 6z"/></svg>
+      </a>
+      <a href="#podglad">
+        Podgląd
+        <svg viewBox="0 0 24 24"><path d="M8.6 16.6L13.2 12 8.6 7.4 10 6l6 6-6 6z"/></svg>
+      </a>
+      <a href="#pobierz">
+        Pobierz
+        <svg viewBox="0 0 24 24"><path d="M8.6 16.6L13.2 12 8.6 7.4 10 6l6 6-6 6z"/></svg>
+      </a>
+    </nav>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose" aria-label="Zamknij">
+    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </button>
+  <button class="lightbox-nav prev" id="lbPrev" aria-label="Poprzedni">
+    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+  </button>
+  <button class="lightbox-nav next" id="lbNext" aria-label="Następny">
+    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+  </button>
+  <div class="lightbox-inner" id="lightboxInner">
+    <img id="lbImage" src="" alt="" />
+  </div>
+  <div class="lightbox-caption" id="lbCaption"></div>
+</div>
+
+<script>
+  (() => {
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+      revealEls.forEach(el => io.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('revealed'));
+    }
+
+    const images = document.querySelectorAll('.morph-image');
+    const bars = document.querySelectorAll('.progress-bar');
+    const label = document.getElementById('morphLabel');
+    const labels = ['Panel główny', 'Lista botów', 'Konsola', 'Ustawienia'];
+    let idx = 0;
+    let timer;
+
+    function setActive(next) {
+      images[idx].classList.remove('active');
+      bars.forEach((b, i) => {
+        b.classList.remove('active');
+        b.classList.toggle('done', i < next);
+      });
+      idx = next;
+      images[idx].classList.add('active');
+      const activeBar = bars[idx];
+      activeBar.classList.remove('done');
+      void activeBar.offsetWidth;
+      activeBar.classList.add('active');
+      if (label) {
+        label.style.opacity = '0';
+        setTimeout(() => {
+          label.textContent = labels[idx] || '';
+          label.style.opacity = '1';
+        }, 160);
+      }
+      clearTimeout(timer);
+      timer = setTimeout(nextImage, 5000);
+    }
+
+    function nextImage() { setActive((idx + 1) % images.length); }
+    function prevImage() { setActive((idx - 1 + images.length) % images.length); }
+
+    bars[0].classList.add('active');
+    timer = setTimeout(nextImage, 5000);
+    bars.forEach((b, i) => {
+      b.addEventListener('click', e => {
+        e.stopPropagation();
+        if (i === idx) return;
+        setActive(i);
+      });
+    });
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    if (prevBtn) prevBtn.addEventListener('click', e => { e.stopPropagation(); prevImage(); });
+    if (nextBtn) nextBtn.addEventListener('click', e => { e.stopPropagation(); nextImage(); });
+
+    const wrap = document.getElementById('morphWrap');
+    if (wrap) {
+      wrap.addEventListener('mousemove', e => {
+        const r = wrap.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        const cx = r.width / 2;
+        const cy = r.height / 2;
+        const rx = ((y - cy) / cy) * -16;
+        const ry = ((x - cx) / cx) * 16;
+        wrap.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) scale(1.04)`;
+      });
+      wrap.addEventListener('mouseleave', () => {
+        wrap.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+      });
+    }
+
+    document.querySelectorAll('.card3d').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        const cx = r.width / 2;
+        const cy = r.height / 2;
+        const rx = ((y - cy) / cy) * -7;
+        const ry = ((x - cx) / cx) * 7;
+        card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+        card.style.setProperty('--mx', x + 'px');
+        card.style.setProperty('--my', y + 'px');
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateX(0deg) rotateY(0deg) translateY(0)';
+      });
+    });
+
+    const galleryData = Array.from(images).map(img => ({ src: img.src, caption: img.alt }));
+    const lightbox = document.getElementById('lightbox');
+    const lightboxInner = document.getElementById('lightboxInner');
+    const lbImage = document.getElementById('lbImage');
+    const lbCaption = document.getElementById('lbCaption');
+    let lbIdx = 0;
+
+    function openLightbox(i) {
+      lbIdx = i;
+      updateLightbox();
+      lightbox.classList.add('open');
+      document.body.classList.add('lock');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.classList.remove('lock');
+      lbImage.style.transform = '';
+    }
+
+    function updateLightbox() {
+      const d = galleryData[lbIdx];
+      lbImage.style.opacity = '0';
+      lbImage.style.transform = 'scale(0.94)';
+      setTimeout(() => {
+        lbImage.src = d.src;
+        lbImage.alt = d.caption;
+        lbCaption.textContent = d.caption;
+        requestAnimationFrame(() => {
+          lbImage.style.opacity = '1';
+          lbImage.style.transform = 'scale(1)';
+        });
+      }, 120);
+    }
+
+    function lbNext() { lbIdx = (lbIdx + 1) % galleryData.length; updateLightbox(); }
+    function lbPrev() { lbIdx = (lbIdx - 1 + galleryData.length) % galleryData.length; updateLightbox(); }
+
+    const morphContainer = document.getElementById('morphContainer');
+    if (morphContainer) {
+      morphContainer.addEventListener('click', () => openLightbox(idx));
+    }
+
+    if (lightboxInner) {
+      lightboxInner.addEventListener('mousemove', e => {
+        const r = lightboxInner.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        const cx = r.width / 2;
+        const cy = r.height / 2;
+        const rx = ((y - cy) / cy) * -6;
+        const ry = ((x - cx) / cx) * 6;
+        lbImage.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) scale(1)`;
+      });
+      lightboxInner.addEventListener('mouseleave', () => {
+        lbImage.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+      });
+    }
+
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbNext').addEventListener('click', lbNext);
+    document.getElementById('lbPrev').addEventListener('click', lbPrev);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') lbNext();
+      if (e.key === 'ArrowLeft') lbPrev();
+    });
+
+    const navPill = document.getElementById('navPill');
+    const navContainer = document.getElementById('navPillContainer');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function movePill(el) {
+      if (!navPill || !el) return;
+      navPill.style.left = el.offsetLeft + 'px';
+      navPill.style.width = el.offsetWidth + 'px';
+    }
+
+    if (navLinks.length && navPill && navContainer) {
+      navLinks[0].classList.add('active');
+      navLinks.forEach(l => {
+        l.addEventListener('mouseenter', () => movePill(l));
+        l.addEventListener('click', () => {
+          navLinks.forEach(x => x.classList.remove('active'));
+          l.classList.add('active');
+          movePill(l);
+        });
+      });
+      navContainer.addEventListener('mouseleave', () => {
+        const active = document.querySelector('.nav-link.active') || navLinks[0];
+        movePill(active);
+      });
+      requestAnimationFrame(() => movePill(navLinks[0]));
+      window.addEventListener('resize', () => {
+        const active = document.querySelector('.nav-link.active') || navLinks[0];
+        movePill(active);
+      });
+    }
+  })();
+</script>
+
 </body>
 </html>
